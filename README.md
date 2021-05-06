@@ -24,4 +24,9 @@ $ git clone https://github.com/sandy14894/url-shortner.git
     - Open project in your favorite editor and change application.properties file to point to your MySQL database
     - Build Spring project 
     - Open localhost:8080/swagger-ui.html to see endpoints.
+    - If not using docker than please changes the url and replace mysql-local to localhost
+
+
+You can access the application using page : localhost:8080/index.html
+
 
