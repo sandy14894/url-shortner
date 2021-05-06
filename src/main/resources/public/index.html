@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+  <script src="url.js"></script>
+  <style>
+  .navbar_foot{
+    text-align: center;
+    align: center;
+    display: inline-block;
+    float: none;
+}
+  </style>
+</head>
+<body  ng-app="myApp" ng-controller="myCtrl">
+
+<div class="jumbotron text-center ">
+  <h1>URL Shortner</h1>
+
+  
+    <div class="col-sm-4 my-1 align-middle navbar_foot">
+      <label class="sr-only" for="inlineFormInputName">URL</label>
+      <input type="text" class="form-control" id="inlineFormInputName" placeholder="Enter URL to short Please add the " data-ng-model="urlText">
+    </div>
+    
+    <div class="align-middle navbar_foot">
+      <button class="btn btn-primary" data-ng-click="shortUrl()">Submit</button>
+    </div>
+  
+</div>
+
+<div class="table-responsive" style="padding-left:20%;padding-right:20%;">        
+<h1 class="text-center">All Shorted Urls</h1>  
+  <table class="table">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>URL</th>
+        <th>Total Visits</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr data-ng-repeat="x in urlList">
+        <td>{{$index+1}}</td>
+        <td>{{x.longUrl}}</td>
+        <td>{{x.hitCount}}</td>
+      </tr>
+    </tbody>
+  </table>
+  </div>
+</div>
+
+</body>
+</html>
